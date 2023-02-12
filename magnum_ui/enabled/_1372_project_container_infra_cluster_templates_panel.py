@@ -20,4 +20,4 @@ PANEL_GROUP = 'container_infra'
 PANEL_DASHBOARD = 'project'
 
 # Python panel class of the PANEL to be added.
-ADD_PANEL = 'magnum_ui.content.cluster_templates.panel.ClusterTemplates'
+# ADD_PANEL = 'magnum_ui.content.cluster_templates.panel.ClusterTemplates'
