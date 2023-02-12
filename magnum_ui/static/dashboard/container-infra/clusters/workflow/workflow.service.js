@@ -328,35 +328,6 @@
                           key: 'master_lb_enabled',
                           type: 'checkbox',
                           title: gettext('Enable Load Balancer for Master Nodes')
-                        },
-                        {
-                          key: 'create_network',
-                          title: gettext('Create New Network'),
-                          onChange: function(isNewNetwork) {
-                            if (isNewNetwork) {
-                              model.fixed_network = MODEL_DEFAULTS.fixed_network;
-                              model.fixed_subnet = MODEL_DEFAULTS.fixed_subnet;
-                            }
-                          }
-                        },
-                        {
-                          key: 'fixed_network',
-                          type: 'select',
-                          title: gettext('Use an Existing Network'),
-                          titleMap: networkTitleMap,
-                          condition: 'model.create_network === false',
-                          required: true,
-                          onChange: function () {
-                            changeFixedNetwork(model);
-                          }
-                        },
-                        {
-                          key: 'fixed_subnet',
-                          type: 'select',
-                          title: gettext('Use an Existing Subnet'),
-                          titleMap: subnetTitleMap,
-                          condition: 'model.create_network === false',
-                          required: true
                         }
                       ]
                     },
@@ -381,18 +352,6 @@
                             gettext('It is generally not recommended to give public access.') +
                             '</div>',
                           condition: 'model.floating_ip_enabled == true'
-                        }
-                      ]
-                    },
-                    {
-                      type: 'fieldset',
-                      title: gettext('Ingress'),
-                      items: [
-                        {
-                          key: 'ingress_controller',
-                          title: gettext('Ingress Controller'),
-                          type: 'select',
-                          titleMap: ingressTitleMap
                         }
                       ]
                     }
